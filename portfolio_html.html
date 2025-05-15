@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nshuti Elise - Data Scientist & Geospatial Intelligence Specialist</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --link-color: #3498db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+        
+        .profile-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-size: 16px;
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .profile-info h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .profile-info p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-info a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        nav {
+            margin-top: 10px;
+        }
+        
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .about p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+        }
+        
+        .experience-item h3, .education-item h3, .project-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skill-category li:before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            height: 180px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-links {
+            margin-top: 15px;
+        }
+        
+        .project-links a {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        .project-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+        
+        .social-links {
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: var(--link-color);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                margin: 5px 15px 5px 0;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .skills-container, .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <div class="profile-pic">
+                 <img src="passport-Photoroom.png" alt="Nshuti Elise" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+            </div>
+
+<!--
+            <div class="profile-pic">
+                Photo
+            </div>
+-->
+            <div class="profile-info">
+                <h1>Nshuti Elise</h1>
+                <p>Data Scientist & Geospatial Intelligence Specialist</p>
+                <div class="contact-info">
+                    <a href="mailto:enshuti01@gmail.com">enshuti01@gmail.com</a>
+                    <a href="https://linkedin.com/in/elise-nshuti" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>I am a data scientist and researcher specializing in geospatial intelligence, advanced analytics, and machine learning to address challenges in public health, finance, and energy. My work bridges research and real-world application to drive efficiency, resilience, and sustainable development through data-driven solutions.</p>
+            <p>My focus lies in applying cutting-edge data science techniques to solve complex problems in the African context.</p>
+        </section>
+        
+        <section id="news">
+            <h2>Recent News</h2>
+            
+            <div class="news-item">
+                <span class="news-date">May 2025</span>
+                <p>Completed my Masters of Science in Information Technology at Carnegie Mellon University, Kigali.</p>
+            </div>
+            
+            <div class="news-item">
+                <span class="news-date">January 2025</span>
+                <p>Started as a Research Assistant at International Growth Centre (IGC) & CMU Africa, working on analyzing financial flows through mobile money data.</p>
+            </div>
+            
+            <div class="news-item">
+                <span class="news-date">August 2024</span>
+                <p>Appointed as Graduate Teaching Assistant for Programming for Data Analytics at Carnegie Mellon University, Africa.</p>
+            </div>
+            
+            <div class="news-item">
+                <span class="news-date">June 2024</span>
+                <p>Started Graduate Research Summer Internship at Carnegie Mellon University, Africa, working on the Energy Loss Mapping project.</p>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Research Assistant – Analysing Financial Flows (MoMo Data)</h3>
+                <div class="date">January 2025 - Present</div>
+                <p><em>International Growth Centre (IGC) & CMU Africa, Remote</em></p>
+                <ul>
+                    <li>Applied data analytics to mobile money and banking data to enhance financial inclusion and regulatory insights.</li>
+                    <li>Developed models to identify bank users operating informal businesses through personal accounts.</li>
+                    <li>Analyzed transaction patterns and user characteristics to distinguish commercial activity from personal use.</li>
+                    <li>Provided insights to support governments in detecting unregistered businesses and improving compliance.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Graduate Teaching Assistant - Programming for Data Analytics</h3>
+                <div class="date">August 2024 - December 2024</div>
+                <p><em>Carnegie Mellon University, Africa, Rwanda</em></p>
+                <ul>
+                    <li>Facilitated students in assignments of Programming for Data Analytics (Python) course.</li>
+                    <li>Provided technical support, resolved coding challenges and troubleshooting issues.</li>
+                    <li>Evaluated student submissions and provided constructive feedback.</li>
+                    <li>Offered one-on-one support during office hours to address student queries.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Graduate Research Summer Intern</h3>
+                <div class="date">June 2024 - August 2024</div>
+                <p><em>Carnegie Mellon University, Africa, Rwanda</em></p>
+                <ul>
+                    <li>Explored digital transformation agenda at Rwanda Energy Group through the Energy Loss Mapping project.</li>
+                    <li>Developed predictive models to detect anomalies related to electricity theft.</li>
+                    <li>Analyzed historical data on energy consumption, customer profiles, and smart meter data.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Electrical Engineer (Electrician & Hub Lineman)</h3>
+                <div class="date">September 2013 - April 2017</div>
+                <p><em>Rwanda Energy Group, Rwanda</em></p>
+                <ul>
+                    <li>Designed and developed electrical systems for utility projects at district/branch level.</li>
+                    <li>Oversaw installation, testing, and maintenance of electrical equipment at hub/province level.</li>
+                    <li>Collaborated with stakeholders to manage projects efficiently at regional/province level.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Masters of Science in Information Technology</h3>
+                <div class="date">July 2023 - May 2025</div>
+                <p><em>Carnegie Mellon University, Kigali, Rwanda</em></p>
+                <p><strong>Relevant Coursework:</strong> Programming for data analytics, Data Inference And Applied Machine Learning, Cloud Infrastructure and Computing, Machine Learning For Earth Observation, Big Data Science and Data Analysis, Geospatial for Health Analytics, Introduction to Policy Making and Analysis</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <div class="date">January 2019 - December 2022</div>
+                <p><em>Mount Kenya University, Kigali, Rwanda</em></p>
+                <p>Second Class Honours - Upper Division</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Advanced Diploma in Electrical and Electronics Engineering</h3>
+                <div class="date">January 2013 - December 2016</div>
+                <p><em>Rwanda Polytechnic, Karongi, Rwanda</em></p>
+                <p>Second Class Honours - Upper Division</p>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="dash.jpg" alt="Geospatial Dashboard" style="height: 100%; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Geospatial Dashboard for Health Analytics</h3>
+                        <p>This interactive dashboard is designed to help you explore the power reliability status of healthcare facilities across Rwanda using spatial and satellite-derived data.</p>
+                        <div class="project-links">
+                            <a href="https://www.arcgis.com/apps/dashboards/1afd0c5777a74d12ab47a7563d3e9c11" target="_blank">View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="energyloss.jpg" alt="Energy Loss Mapping" style="height: 100%; width: 100%; object-fit: cover;">
+                </div>
+                <div class="project-content">
+                    <h3>Energy Loss Mapping & Theft Detection</h3>
+                    <p>Developed predictive models to identify electricity theft patterns using machine learning algorithms applied to energy consumption data.</p>
+                    <div class="project-links">
+                        <a href="http://192.168.1.65:8501" target="_blank">Project Details</a>
+                    </div>
+                </div>
+            </div>
+
+                
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="finance.jpg" alt="Financial Flow Analysis" style="height: 100%; width: 100%; object-fit: cover;">
+                </div>
+                <div class="project-content">
+                    <h3>Mobile Money Transaction Pattern Analysis</h3>
+                    <p>Analyzed mobile money transaction data to identify informal businesses operating through personal accounts, supporting financial inclusion initiatives.</p>
+                    <div class="project-links">
+                        <a href="https://docs.google.com/presentation/d/1lKpJeDNrIx2wjt_xzxHCETbeg9wZcDrI/edit?usp=sharing&ouid=115349309860826982268&rtpof=true&sd=true" target="_blank">Research Summary</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming & Data Analysis</h3>
+                    <ul>
+                        <li>Python and SQL</li>
+                        <li>Pandas, NumPy, SciPy, Scikit-learn</li>
+                        <li>Hadoop and Google BigQuery</li>
+                        <li>MySQL, Microsoft SQL Server, PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul>
+                        <li>Regression, Classification, Clustering</li>
+                        <li>Time Series Analysis</li>
+                        <li>Feature Engineering & Model Optimization</li>
+                        <li>Hyperparameter tuning</li>
+                        <li>A/B Testing</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Geospatial Analysis & GIS</h3>
+                    <ul>
+                        <li>ArcGIS Pro</li>
+                        <li>GeoPandas, Geoprocessing</li>
+                        <li>Mosaiks features extraction</li>
+                        <li>Sentinel-2, Sentinel-1 (SAR), Landsat-8/9</li>
+                        <li>Google Earth Engine</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Computer Vision & Satellite Image Analysis</h3>
+                    <ul>
+                        <li>OpenCV, scikit-image</li>
+                        <li>Mask R-CNN, U-Net, CNNs</li>
+                        <li>Land Cover Mapping</li>
+                        <li>Environmental Monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business Intelligence & Visualization</h3>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>Plotly, Seaborn, Matplotlib</li>
+                        <li>ArcGIS Online</li>
+                        <li>Excel for Data Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud Computing & Data Engineering</h3>
+                    <ul>
+                        <li>AWS, Google Cloud, Microsoft Azure</li>
+                        <li>Docker, Kubernetes</li>
+                        <li>Git, GitHub</li>
+                        <li>Streamlit</li>
+                        <li>Flask RESTFUL APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="leadership">
+            <h2>Leadership & Activities</h2>
+            
+            <div class="experience-item">
+                <h3>CMU Africa Student Guild Member</h3>
+                <div class="date">2023 - 2025</div>
+                <p>Served as Sports and Wellness Minister for the Class of 2025, organizing activities and initiatives to promote student wellbeing and community building.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>IEEE Student Membership</h3>
+                <p>Active member of IEEE, participating in technical workshops and professional development opportunities.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Techie Talkers Toastmasters Club</h3>
+                <p>Member focused on developing public speaking and leadership skills in technical contexts.</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>I'm open to research collaborations, consulting opportunities, and discussions about data science applications in development contexts. Please feel free to reach out via email or LinkedIn.</p>
+            
+            <div class="contact-info" style="margin-top: 20px;">
+                <p><strong>Email:</strong> <a href="mailto:enshuti01@gmail.com">enshuti01@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/elise-nshuti" target="_blank">linkedin.com/in/elise-nshuti</a></p>
+                <p><strong>Location:</strong> Kigali, Rwanda</p>
+                <p><strong>Phone:</strong> +250785547693</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Nshuti Elise. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/elise-nshuti" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
