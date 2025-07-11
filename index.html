@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nshuti Elise - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-text .highlight {
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-cv {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+       .profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.profile-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: contain; /* ensures the full image is shown without cropping */
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.05); /* optional for aesthetic consistency */
+}
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Common Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .projects-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .projects-nav button {
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            background: transparent;
+            color: #3498db;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .projects-nav button.active,
+        .projects-nav button:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .project-image img.project-thumbnail:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+        .project-card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+        
+        
+.project-image img.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures image fills container without stretching */
+    object-position: center; /* centers the image */
+}
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .project-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            color: #2980b9;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #f8f9fa;
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .skill-category p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .skill-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .skill-item h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-level-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+
+        .blog-image-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blog-date {
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .blog-category {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .blog-link:hover {
+            color: #2980b9;
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-content {
+            margin-top: 3rem;
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        .contact-item .icon {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        
+        .blog-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* or 4 / 3 if you prefer */
+    overflow: hidden;
+    border-radius: 12px; /* match your project card rounding */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* optional for depth */
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* optional hover effect */
+}
+
+.blog-image:hover img {
+    transform: scale(1.05);
+}
+
+
+        .contact-item-content {
+            text-align: left;
+        }
+
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-content p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Project Category Styles */
+        .project-category {
+            display: none;
+        }
+
+        .project-category.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .profile-image .placeholder {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .skills-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, I'm <span class="highlight">Nshuti Elise</span></h1>
+                    <h2>Electrical Engineer | Data & AI Consultant</h2>
+                    <p>Turning Complex Data into Actionable Insights — With a Focus on Energy & Finance</p>
+                    
+          <div class="hero-buttons">
+    <a href="#contact" class="btn btn-primary">Contact Info</a>
+    <a href="#projects" class="btn btn-secondary">View My Work</a>
+    <a href="https://docs.google.com/document/d/1JkX9-j8Lv7GmZqpco5rr437DR3hMoPS-/view" target="_blank" class="btn btn-cv">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+        </svg>
+        View My CV
+    </a>
+          </div>
+
+                </div>
+                
+             <div class="profile-image">
+    <img src="Nshuti Profile Photo.jpg" alt="Nshuti Elise Profile Photo" class="profile-photo">
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a data-driven technologist and consultant specializing in Data Engineering, AI (including Governance), Geospatial Analytics, and Cloud Technologies, with a focus on the Energy and Finance sectors. I partner with organizations to transform complex data into actionable insights that drive informed decision-making, optimize operations, and support sustainable growth. I hold a Master of Science in Information Technology from Carnegie Mellon University Africa and a Bachelor of Science in Information Technology from Mount Kenya University, grounded in a solid foundation of electrical engineering from Rwanda Polytechnic. Leveraging this diverse educational background alongside practical experience, I design and build robust data architectures, scalable ETL pipelines, and cloud analytics environments that convert raw data into strategic assets. My work encompasses energy loss reduction through pragmatic AI, credit risk analytics, geospatial infrastructure analysis, and the development of interactive dashboards; all aimed at enabling organizations to confidently progress from data collection to data-driven decision-making.</p>
+                    
+                    <p>If you are looking to harness your data and cloud capabilities to address real-world challenges while accelerating your impact, let’s connect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-nav">
+                <button class="active" onclick="showProjects('all')">All Projects</button>
+                <button onclick="showProjects('data-analytics')">Data Science Projects</button>
+                <button onclick="showProjects('business-intelligence')">Business Intelligence Projects</button>
+                <button onclick="showProjects('geospatial')">Geospatial Analytics</button>
+            </div> 
+
+<!--        --->
+         <div class="projects-grid">      
+            <div class="project-card" data-category="data-analytics">
+                <div class="project-image">
+                    <img src="GDP vs Fertility.jpg" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                  </div>
+
+                    <div class="project-content">
+                        <h3>GDP per Capita and Fertility Rates</h3>
+                        <p>This project explores the relationship between a country's GDP per capita and its fertility rates. Using data analysis and visualization, it examines how economic prosperity may influence population growth trends across different nations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://github.com/nshutielise/Fertility-Rate-vs-GDP-per-Capita/tree/main" class="project-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+                                GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+            </div>
+                
+             <div class="project-card" data-category="data-analytics">
+
+                <div class="project-image">
+                    <img src="uk stock market vs house price.jpg" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+                    <div class="project-content">
+                        <h3>UK Housing and Market Comparison Analysis</h3>
+                        <p>This project provides a comprehensive analysis of the relationship between the UK housing market and the FTSE 100 Index. It explores trends, correlations, and performance patterns between the UK real estate sector and stock market indices.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://github.com/nshutielise/uk-housing-and-market-comparison" class="project-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+                                GitHub Repo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card" data-category="data-analytics">
+
+                <div class="project-image">
+                    <img src="malnutrition .jpg" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+                    <div class="project-content">
+                        <h3>Global Nutrition Insights</h3>
+                        <p>Explore the relationship between GDP per capita and malnutrition prevalence worldwide. Our project visualizes data, provides insights, and highlights the socio-economic factors influencing global nutrition and well-being.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://github.com/nshutielise/GDPperCapitalMulnitrution/tree/main" class="project-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+                                GitHub Repo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+<!--                -->
+<!--                -->
+
+            <div class="project-card" data-category="data-analytics">
+
+            <div class="project-image">
+                    <img src="titanic.jpg" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+
+                    <div class="project-content">
+                        <h3>Titanic Survival Probability Analysis</h3>
+                        <p>An analytical project that predicts the survival probability of Titanic passengers using machine learning and data analysis techniques.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://github.com/nshutielise/-Titanic-Survival-Probability-Analysis" class="project-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+                                GitHub Repo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+                
+             <div class="project-card" data-category="business-intelligence">
+
+                <div class="project-image">
+                    <img src="LoanDashboard.png" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+
+                    <div class="project-content">
+                        <h3>Bank Loan Analytics Dashboard </h3>
+                        <p>Comprehensive BI dashboard tracking 38K+ loan applications with funding analysis, DTI calculations, and loan quality metrics using DAX for advanced calculations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerBI</span>
+                            <span class="tech-tag">Power Queries</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Data Analytics</span>     
+
+                    </div>
+                        <div class="project-links">
+                               <a href="https://app.powerbi.com/view?r=eyJrIjoiNWYwMDZiZDktMjY3ZS00NjI3LWI1YTEtYWY5N2VlNmY3MmJiIiwidCI6ImUzNmVlMzhmLTkxYjgtNGRjYS05YjEzLWNhYTUzNjBjOTcxNCIsImMiOjF9" class="project-link">
+<!--
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+-->
+                                Live Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+                        
+             
+             <div class="project-card" data-category="business-intelligence">
+
+                <div class="project-image">
+                    <img src="customerChurn.png" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+
+                    <div class="project-content">
+                        <h3>Bank Customer Churn Analysis</h3>
+                        <p>In this project, I analyzed customer behavior to understand the factors contributing to churn in a retail bank. Using demographic and transactional data from 10,000 customers, I explored patterns across age groups, account balances, credit scores, and product usage...</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PowerBI</span>
+                            <span class="tech-tag">Power Queries</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Data Analytics</span> 
+                        </div>
+                        <div class="project-links">
+                               <a href="https://app.powerbi.com/view?r=eyJrIjoiMDJlY2RiZTQtNTQ5Zi00NWY3LWFiNjgtMTU5ZmQ3NzBkOGRhIiwidCI6ImUzNmVlMzhmLTkxYjgtNGRjYS05YjEzLWNhYTUzNjBjOTcxNCIsImMiOjF9" class="project-link">
+<!--
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+-->
+                                Live Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+            
+             <div class="project-card" data-category="geospatial">
+
+                <div class="project-image">
+                    <img src="PowerHealth.png" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+
+                    <div class="project-content">
+                        <h3>Healthcare Power Reliability</h3>
+                        <p>Geospatial analysis dashboard assessing power infrastructure risks for healthcare facilities in Rwanda using ArcGIS and spatial analytics</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ArcGIS Pro</span>
+                            <span class="tech-tag">ArcGIS Online</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Geospatial Analytics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://www.arcgis.com/apps/dashboards/1afd0c5777a74d12ab47a7563d3e9c11" class="project-link">
+<!--
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+-->
+                                Live Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+<!--            -->
+             
+             <div class="project-card" data-category="geospatial">
+
+                <div class="project-image">
+                    <img src="TransportationToWork.png" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+
+                    <div class="project-content">
+                        <h3>Healthy Transportation to Work</h3>
+                        <p>This dashboard explores means of transportation, commute times, and total workers for one segment of the population, essential workers. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ArcGIS Pro</span>
+                            <span class="tech-tag">ArcGIS Online</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Geospatial Analytics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://www.arcgis.com/apps/dashboards/14febee6a5d94c61b37ffdb17f378cc7" class="project-link">
+<!--
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+-->
+                                View the story
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+            <div class="project-card" data-category="geospatial">
+                
+                <div class="project-image">
+                    <img src="HealthBusinessAnalytics.png" alt="Bank Loan Analytics Dashboard Preview" class="project-thumbnail">
+                </div>
+
+                    <div class="project-content">
+                        <h3>Health Industry Study</h3>
+                        <p>A spatial analysis of Austin’s health industry, highlighting home health businesses, health occupations, sales density, and elderly/disabled populations to reveal insights for policy, investment, and service delivery.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ArcGIS Pro</span>
+                            <span class="tech-tag">ArcGIS Online</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Geospatial Analytics</span>
+                            <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-links">
+                               <a href="https://storymaps.arcgis.com/stories/37aaff09e1e247f29638aa2d8d160522" class="project-link">
+<!--
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+-->
+                                View the story
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+<!--            -->
+            
+                  
+    </div>
+    </section>
+
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Advanced analytics, machine learning, and statistical modeling to extract insights from complex datasets.</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Data Wrangling & Exploration - Python</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                         <div class="skill-item">
+                            <h4>Statistical Analysis & Hypothesis Testing - A/B testing, confidence intervals, regression analysis</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="skill-item">
+                            <h4>Data Visualization & Storytelling</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Translating business problems into analytics workflows.</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                       
+                        <div class="skill-item">
+                            <h4>Business Intelligence</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🧠</div>
+                    <h3>Machine Learning & AI</h3>
+                    <p>Developing and deploying intelligent systems using various machine learning paradigms.</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Supervised & Unsupervised Learning</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Feature Engineering & Data Preparation</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                       
+                        <div class="skill-item">
+                            <h4>Model Evaluation & Tuning</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Deep Learning & Neural Networks</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Model Deployment & Monitoring</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud & MLOps</h3>
+                    <p>Building scalable data solutions and deploying machine learning models in cloud environments.</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>AWS Basics</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Azure Data Factory </h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Azure Event Hubs</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Azure Synapse Analytics </h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>ETL/ELT</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Azure Databricks (Spark)</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                         <div class="skill-item">
+                            <h4> star and snowflake schemas</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                          <div class="skill-item">
+                            <h4>Medallion Architecture</h4>
+                            <div class="skill-level">
+                                <div class="skill-level-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog section">
+        <div class="container">
+            <h2 class="section-title">Latest Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">                   
+                    
+                <div class="blog-image">
+                      <img src="blog1.png" alt="Blog image">
+                </div>
+
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">July 4, 2025</span>
+                            <span class="blog-category">Data Engineering</span>
+                        </div>
+                        <h3>Data Engineering - Cost Analysis and Architectural  </h3>
+                        <p>Decisions in an End-to-End Streaming Data Engineering Project (Azure Databricks vs Azure Functions). As data engineers, it’s easy to get caught up in the excitement of solving technical challenges:</p>
+                        <a href="https://www.linkedin.com/pulse/cost-analysis-architectural-decisions-end-to-end-streaming-elis%C3%A9-qqbgf/" class="blog-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59,16.59L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.59Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                      <img src="policy.jpg" alt="Blog image">
+                </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">April 15, 2025</span>
+                            <span class="blog-category"> AI and Policy</span>    
+                        </div>
+                        <h3>Reducing Energy Losses in Africa with Pragmatic AI: A Policy Brief</h3>
+                        <p>This policy brief explores how pragmatic AI approaches can help African utilities and policymakers reduce energy losses through targeted, data-driven actions, </p>
+                        <a href="https://drive.google.com/file/d/1KZpPs8ioFr0GvdxoepiuU8xy61M6Ptzy/view?usp=sharing" class="blog-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59,16.59L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.59Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                      <img src="masterml.jpg" alt="Blog image">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Sep 20, 2023</span>
+                            <span class="blog-category">Geospatial</span>
+                        </div>
+                        <h3>How to Master Machine Learning: A Simple Guide for Everyone.</h3>
+                        <p>Join me in this comprehensive guide filled with practical tips, insightful hints, and clear guidance to help you confidently navigate this dynamic field. </p>
+                        <a href="https://medium.com/@enshuti/how-to-master-machine-learning-a-simple-guide-for-everyone-8d89176e5297" class="blog-link">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59,16.59L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.59Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro">I'm open to new opportunities, collaborations, and discussions about data, technology, and social impact. Feel free to reach out!</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">✉️</div>
+                        <div class="contact-item-content">
+                            <h4>Email Me</h4>
+                            <p>enshuti01@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📞</div>
+                        <div class="contact-item-content">
+                            <h4>Call Me</h4>
+                            <p>+250 785 547 693</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div class="contact-item-content">
+                            <h4>Location</h4>
+                            <p>Kigali, Rwanda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/elise-nshuti/" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 21H17V14.5C17 13.12 16.11 12 14.88 12C13.65 12 13 13.12 13 14.5V21H9V9H13V11.2C13.62 10.16 14.65 9 16.5 9C19 9 21 11.08 21 14.5V21M7 21H3V9H7V21M5 7C3.9 7 3 6.11 3 5C3 3.9 3.9 3 5 3C6.11 3 7 3.9 7 5C7 6.11 6.11 7 5 7Z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/nshutielise" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.66,20.03 8.36,21.34C8.85,21.43 9.03,21.15 9.03,20.92L9.06,19.23C6.43,19.72 5.86,18.59 5.86,18.59C5.4,17.44 4.75,17.14 4.75,17.14C3.87,16.53 4.86,16.55 4.86,16.55C5.83,16.62 6.35,17.56 6.35,17.56C7.21,19.03 8.57,18.61 9.13,18.33C9.22,17.7 9.47,17.29 9.75,17.06C7.5,16.81 5.17,15.96 5.17,12.96C5.17,12.11 5.46,11.41 5.95,10.87C5.88,10.64 5.64,9.91 6.04,8.96C6.04,8.96 6.74,8.73 9.06,10.37C9.72,10.18 10.45,10.08 11.18,10.08C11.91,10.08 12.64,10.18 13.3,10.37C15.62,8.73 16.32,8.96 16.32,8.96C16.72,9.91 16.48,10.64 16.41,10.87C16.9,11.41 17.19,12.11 17.19,12.96C17.19,15.95 14.85,16.8 12.6,17.05C12.94,17.34 13.26,17.96 13.26,18.81L13.26,21.34C13.26,21.57 13.43,21.85 13.93,21.76C17.63,20.45 20.29,16.84 20.29,12A10,10 0 0,0 12,2Z" />
+                        </svg>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nshuti Elise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Toggle mobile menu (basic functionality)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '60px'; /* Adjust based on header height */
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = '#fff';
+            navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            navLinks.style.padding = '1rem 20px';
+        });
+
+        // Hide mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').style.display = 'none';
+                }
+            });
+        });
+
+        // Projects filtering functionality
+        function showProjects(category) {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update active button
+            document.querySelectorAll('.projects-nav button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // CV Download function (placeholder)
+        function downloadCV() {
+            alert('CV download initiated! (This is a placeholder function)');
+            // In a real scenario, you would link to your CV file here:
+            // window.open('path/to/your/cv.pdf', '_blank');
+        }
+
+        // Set initial state for projects on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showProjects('all'); // Show all projects by default
+        });
+    </script>
+</body>
+</html>
